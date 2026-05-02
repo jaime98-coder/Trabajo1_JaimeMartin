@@ -1,0 +1,44 @@
+-------------------------------------------------
+Paciente
+-------------------------------------------------
+- nombre: String
+- direccion: String
+- telefono: String
+- baja: String
+-------------------------------------------------
++ setNombre(): void
++ setTelefono(): void
++ setBaja(): void
++ equals(obj : Object): boolean
+-------------------------------------------------
+
+
+-------------------------------------------------
+ComparadorNombre implements Comparator<Paciente>
+-------------------------------------------------
++ compare(paciente1: Paciente, paciente2: Paciente): int
+-------------------------------------------------
+
+-------------------------------------------------
+comparadorTelefono implements Comparator<Paciente>
+-------------------------------------------------
++ compare(paciente1: Paciente, paciente2: Paciente): int
+-------------------------------------------------
+
+
+
+-------------------------------------------------
+GestorPacientes
+-------------------------------------------------
+- listaPacientes : ArrayList<Paciente>
+- ruta: String
+-------------------------------------------------
++ anadirPaciente(nombrePaciente: String, tlfPaciente: String, direccion: String): void
++ buscarPaciente(nombrePaciente: String, tlfPaciente: String): void
++ listarPacientes(paciente: Paciente): void
++ modificarPaciente(nombrePaciente: String, tlfPaciente: String): void
++ eliminarPaciente(nombrePaciente: String, tlfPaciente: String): void
++ guardarPacientes(): void
++ cargarPacientes(): void
+
+
