@@ -1,18 +1,20 @@
 -------------------------------------------------
 Paciente implements Comparable<Paciente>
 -------------------------------------------------
-- final static SEPARADOR: String = ";"
++ static final SEPARADOR: String = ";"
 - nombre: String
 - direccion: String
 - telefono: String
 - baja: boolean
 -------------------------------------------------
 + Paciente(nombre: String, direccion: String, telefono: String, baja: boolean)
-+ setDireccion(direccion: String): void
-+ setBaja(baja: boolean): void
 + getNombre(): String
 + getTelefono(): String
-+ getFichaPantalla(): String
++ getDireccion(): String
++ isBaja(): boolean
++ setDireccion(direccion: String): void
++ setBaja(baja: boolean): void
++ toString(): String
 + getFichaArchivo(): String
 + equals(obj: Object): boolean
 + hashCode(): int
@@ -24,20 +26,39 @@ Paciente implements Comparable<Paciente>
 GestorPacientes
 -------------------------------------------------
 - pacientes: TreeSet<Paciente>
-- ruta: String
+- rutaArchivo: String = "src/informacionPacientes.txt"
 -------------------------------------------------
-+ GestorPacientes(ruta: String)
-+ anadirPaciente(nuevoPaciente: Paciente): boolean
-+ buscarPaciente(nombre: String, telefono: String): Paciente
-+ obtenerPacientes(): Collection<Paciente>
-+ eliminarPaciente(nombre: String, telefono: String): boolean
-+ guardarPacientes(): void
-+ cargarPacientes(): void
++ GestorPacientes()
++ cargarDatos(): void
++ guardarDatos(): void
 + estaVacio(): boolean
++ anadirPaciente(pacienteAAnadir: Paciente): boolean
++ buscarPaciente(nombre: String, telefono: String): Paciente
++ eliminarPaciente(nombre: String, telefono: String): boolean
++ obtenerPacientes(): Collection<Paciente>
+-------------------------------------------------
+
+
+
+-------------------------------------------------
+Main
 -------------------------------------------------
 
 -------------------------------------------------
-archivo.txt
++ main(args: String[]): void
+- gestionarAltaPaciente(sc: Scanner, miGestor: GestorPacientes): void
+- gestionarBusquedaPaciente(sc: Scanner, miGestor: GestorPacientes): void
+- gestionarListadoPacientes(miGestor: GestorPacientes): void
+- gestionarModificacionPaciente(sc: Scanner, miGestor: GestorPacientes): void
+- gestionarBajaPaciente(sc: Scanner, miGestor: GestorPacientes): void
+- guardarDatosSistema(miGestor: GestorPacientes): void
+- mostrarSubmenuModificar(pacienteAModificar: Paciente): void
+- mostrarMenu(): void
+-------------------------------------------------
+
+
+-------------------------------------------------
+informacionPacientes.txt
 -------------------------------------------------
 nombre;dirección;teléfono;baja
 -------------------------------------------------
