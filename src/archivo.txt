@@ -1,6 +1,7 @@
 -------------------------------------------------
 Paciente implements Comparable<Paciente>
 -------------------------------------------------
+- final static SEPARADOR: String = ";"
 - nombre: String
 - direccion: String
 - telefono: String
@@ -24,7 +25,6 @@ GestorPacientes
 -------------------------------------------------
 - pacientes: TreeSet<Paciente>
 - ruta: String
-- final static SEPARADOR: String = ";"
 -------------------------------------------------
 + GestorPacientes(ruta: String)
 + anadirPaciente(nuevoPaciente: Paciente): boolean
